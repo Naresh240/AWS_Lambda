@@ -1,0 +1,30 @@
+service: serverless-http
+
+provider:
+  name: aws
+  runtime: python3.6
+  stage: dev
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+  goodbye:
+    handler: handler.goodbye
+    events:
+      - http:
+          path: goodbye
+          method: get
+plugins:
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: helloworld.nareshtestdomain.tk
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+    certificateArn: arn:aws:acm:us-east-1:389442125494:certificate/aaf1e240-8617-4238-ace9-929671632dc0

@@ -1,0 +1,11 @@
+{
+  "name": "serverless_application",
+  "version": "1.0.0",
+  "description": "serverless lambda",
+  "author": "Naresh Kamani <naresh240.qis@gmail.com>",
+  "dependencies": {
+    "express": "^4.16.1",
+	"serverless": "^2.20.1",
+	"serverless-domain-manager": "^5.1.0"
+  }
+}
